@@ -27,7 +27,7 @@
 [![Project](https://img.shields.io/badge/Project-%239c403d?style=flat&logoColor=%23FA7F6F
 )](https://pku-epic.github.io/TrackVLA-web/)
 [![arXiv](https://img.shields.io/badge/Arxiv-%233b6291?style=flat&logoColor=%23FA7F6F
-)]()
+)](http://arxiv.org/abs/2505.23189)
 [![Video](https://img.shields.io/badge/Video-%23c97937?style=flat&logoColor=%23FA7F6F
 )](https://youtu.be/v51U3Nk-SK4?si=foz3zbYD8hLHSybC)
 
