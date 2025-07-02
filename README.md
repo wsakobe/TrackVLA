@@ -82,6 +82,12 @@
               └── ...
     ```
 
+    Next, run the following code to obtain data for the humanoid avatars:
+      ```
+      python download_humanoid_data.py
+      ```
+
+
 ## 🧪 Evaluation
   Run the script with:
 
