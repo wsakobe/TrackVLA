@@ -1,0 +1,218 @@
+[
+  {
+    "file_path": "exp_results/random_agent/stt/mv2HUxq3B53/26.json",
+    "result": {
+      "finish": true,
+      "status": "Normal",
+      "success": 0.0,
+      "following_rate": 0.7928994082840237,
+      "following_step": 134,
+      "total_step": 169,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/mv2HUxq3B53/21.json",
+    "result": {
+      "finish": true,
+      "status": "Normal",
+      "success": 0.0,
+      "following_rate": 0.8367346938775511,
+      "following_step": 41,
+      "total_step": 49,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/mv2HUxq3B53/24.json",
+    "result": {
+      "finish": false,
+      "status": "Lost",
+      "success": 0.0,
+      "following_rate": 0.6020408163265306,
+      "following_step": 59,
+      "total_step": 98,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/mv2HUxq3B53/2.json",
+    "result": {
+      "finish": false,
+      "status": "Collision",
+      "success": 0.0,
+      "following_rate": 0.7241379310344828,
+      "following_step": 21,
+      "total_step": 29,
+      "collision": 1.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/HaxA7YrQdEC/0.json",
+    "result": {
+      "finish": true,
+      "status": "Normal",
+      "success": 1.0,
+      "following_rate": 1.0,
+      "following_step": 59,
+      "total_step": 59,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/HaxA7YrQdEC/4.json",
+    "result": {
+      "finish": true,
+      "status": "Normal",
+      "success": 0.0,
+      "following_rate": 0.68,
+      "following_step": 51,
+      "total_step": 75,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/gYvKGZ5eRqb/70.json",
+    "result": {
+      "finish": true,
+      "status": "Normal",
+      "success": 1.0,
+      "following_rate": 0.96,
+      "following_step": 168,
+      "total_step": 175,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/gYvKGZ5eRqb/111.json",
+    "result": {
+      "finish": true,
+      "status": "Normal",
+      "success": 1.0,
+      "following_rate": 1.0,
+      "following_step": 52,
+      "total_step": 52,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/E9uDoFAP3SH/348.json",
+    "result": {
+      "finish": true,
+      "status": "Normal",
+      "success": 0.0,
+      "following_rate": 0.49382716049382713,
+      "following_step": 40,
+      "total_step": 81,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/E9uDoFAP3SH/328.json",
+    "result": {
+      "finish": false,
+      "status": "Lost",
+      "success": 0.0,
+      "following_rate": 0.37254901960784315,
+      "following_step": 19,
+      "total_step": 51,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/oLBMNvg9in8/65.json",
+    "result": {
+      "finish": true,
+      "status": "Normal",
+      "success": 0.0,
+      "following_rate": 0.5903614457831325,
+      "following_step": 49,
+      "total_step": 83,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/oLBMNvg9in8/42.json",
+    "result": {
+      "finish": false,
+      "status": "Lost",
+      "success": 0.0,
+      "following_rate": 0.05357142857142857,
+      "following_step": 3,
+      "total_step": 56,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/2n8kARJN3HM/185.json",
+    "result": {
+      "finish": false,
+      "status": "Lost",
+      "success": 0.0,
+      "following_rate": 0.7357142857142858,
+      "following_step": 103,
+      "total_step": 140,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/2n8kARJN3HM/10.json",
+    "result": {
+      "finish": false,
+      "status": "Lost",
+      "success": 0.0,
+      "following_rate": 0.38461538461538464,
+      "following_step": 20,
+      "total_step": 52,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/Vt2qJdWjCF2/18.json",
+    "result": {
+      "finish": false,
+      "status": "Lost",
+      "success": 0.0,
+      "following_rate": 0.7480314960629921,
+      "following_step": 95,
+      "total_step": 127,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/Vt2qJdWjCF2/97.json",
+    "result": {
+      "finish": false,
+      "status": "Lost",
+      "success": 0.0,
+      "following_rate": 0.7692307692307693,
+      "following_step": 90,
+      "total_step": 117,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/F7EAMsdDASd/15.json",
+    "result": {
+      "finish": true,
+      "status": "Normal",
+      "success": 0.0,
+      "following_rate": 0.7540983606557377,
+      "following_step": 46,
+      "total_step": 61,
+      "collision": 0.0
+    }
+  },
+  {
+    "file_path": "exp_results/random_agent/stt/F7EAMsdDASd/10.json",
+    "result": {
+      "finish": false,
+      "status": "Lost",
+      "success": 0.0,
+      "following_rate": 0.5416666666666666,
+      "following_step": 39,
+      "total_step": 72,
+      "collision": 0.0
+    }
+  }
+]

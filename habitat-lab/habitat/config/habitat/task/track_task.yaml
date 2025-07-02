@@ -1,0 +1,13 @@
+defaults:
+  - task_config_base
+  - measurements:
+    - distance_to_leader
+    - human_following
+    - human_following_success
+    - human_distance_to_goal
+    - did_multi_agents_collide 
+    - human_collision
+    - top_down_map_following
+  - _self_
+
+type: MultiHumanTrackingTask-v0

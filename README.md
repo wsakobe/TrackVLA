@@ -39,28 +39,85 @@
     <img src="assets/teaser.png" alt="Dialogue_Teaser" width=100% >
 </div>
 
+## 📢 News
+
+* [25/07/02]: The EVT-Bench is now available.
+
+## 💡 Installation
+1. **Preparing conda env**
+
+   First, you need to install [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/). Once conda installed, create a new env:
+   ```bash
+   conda create -n evt_bench python=3.9 cmake=3.14.0
+   conda activate evt_bench
+   ```
+
+2. **Conda install habitat-sim**
+   
+   You need to install habitat-sim v0.3.1
+      ```
+      conda install habitat-sim==0.3.1 withbullet -c conda-forge -c aihabitat
+      ```
+
+3. **Install habitat-lab from source**
+      ```
+      cd habitat-lab
+      pip install -e habitat-lab
+      ```
+
+4. **Prepare datasets**
+
+    Download Habitat Matterport 3D (HM3D) dataset from [here](https://github.com/facebookresearch/habitat-sim/blob/main/DATASETS.md#habitat-matterport-3d-research-dataset-hm3d).
+
+    Then move the dataset to `data/scene_datasets`. The structure of the dataset is outlined as follows:
+    ```
+    data/
+     └── scene_datasets/
+        └── hm3d/
+          ├── train/
+          │   └── ...
+          ├── val/
+          │   └── ...
+          └── minival
+              └── ...
+    ```
+
+## 🧪 Evaluation
+  Run the script with:
+
+    bash eval.sh
+
+  Results will be saved in the specified SAVE_PATH, which will include a log directory and a video directory. To monitor the results during the evaluation process, run:
+
+    watch -n 1 python analyze_results.py --path YOUR_RESULTS_PATH
+
+  To stop the evaluation, use:
+
+    bash kill_eval.sh
+
 
 ## 📝 TODO List
-- \[X\] Release the arXiv paper in May, 2025.
-- \[ \] Release the EVT-Bench (Embodied Visual Tracking Benchmark).
-- \[ \] Release the large-scale embodied visual tracking dataset.
-- \[ \] Release the checkpoint and code of TrackVLA.
+- [x] Release the arXiv paper in May, 2025.
+- [x] Release the EVT-Bench (Embodied Visual Tracking Benchmark).
+- [ ] Release the large-scale embodied visual tracking dataset.
+- [ ] Release the checkpoint and code of TrackVLA.
 
 ## ✉️ Contact
 For any questions, please feel free to email wangshaoan@stu.pku.edu.cn. We will respond to it as soon as possible.
 
 
-<!-- ## 🔗 Citation
-If you find our work helpful, please cite it:
+## 🔗 Citation
+If you find our work helpful, please consider citing it as follows:
 
 ```bibtex
-@article{cai2025navdp,
-  title = {NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance},
-  author = {Wenzhe Cai, Jiaqi Peng, Yuqiang Yang, Yujian Zhang, Meng Wei, Hanqing Wang, Yilun Chen, Tai Wang and Jiangmiao Pang},
-  booktitle = {Arxiv},
-  year = {2025},
+@article{wang2025trackvla,
+  title={Trackvla: Embodied visual tracking in the wild},
+  author={Wang, Shaoan and Zhang, Jiazhao and Li, Minghan and Liu, Jiahang and Li, Anqi and Wu, Kui and Zhong, Fangwei and Yu, Junzhi and Zhang, Zhizheng and Wang, He},
+  journal={arXiv preprint arXiv:2505.23189},
+  year={2025}
 }
-``` -->
+```
+
 ## 📄 License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
 <br />

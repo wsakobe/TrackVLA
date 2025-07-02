@@ -1,0 +1,169 @@
+# @package _global_
+
+defaults:
+  - /habitat: habitat_config_base
+  - /habitat/task: track_task
+  
+  # Config agent sensors
+  - /habitat/simulator/sensor_setups@habitat.simulator.agents.agent_0: following_humanoid
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_0: human
+  - /habitat/simulator/sensor_setups@habitat.simulator.agents.agent_1: spot_agent_simplified
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_1: spot
+  - /habitat/simulator/sensor_setups@habitat.simulator.agents.agent_2: following_humanoid
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_2: human
+  - /habitat/simulator/sensor_setups@habitat.simulator.agents.agent_3: following_humanoid
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_3: human
+  - /habitat/simulator/sensor_setups@habitat.simulator.agents.agent_4: following_humanoid
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_4: human
+  - /habitat/simulator/sensor_setups@habitat.simulator.agents.agent_5: following_humanoid
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_5: human
+  - /habitat/simulator/sensor_setups@habitat.simulator.agents.agent_6: following_humanoid
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_6: human
+  - /habitat/simulator/sensor_setups@habitat.simulator.agents.agent_7: following_humanoid
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_7: human
+  - /habitat/simulator/sensor_setups@habitat.simulator.agents.agent_8: following_humanoid
+  - /habitat/simulator/agents@habitat.simulator.agents.agent_8: human
+  - /habitat/dataset/track: track-val-dt
+
+  # Config agent action
+  - /habitat/task/actions@habitat.task.actions.agent_1_base_velocity: base_velocity_non_cylinder
+  - /habitat/task/actions@habitat.task.actions.agent_0_humanoid_navigate_action: oracle_nav_action
+  - /habitat/task/actions@habitat.task.actions.agent_2_oracle_nav_randcoord_action_obstacle: oracle_nav_action
+  - /habitat/task/actions@habitat.task.actions.agent_3_oracle_nav_randcoord_action_obstacle: oracle_nav_action
+  - /habitat/task/actions@habitat.task.actions.agent_4_oracle_nav_randcoord_action_obstacle: oracle_nav_action
+  - /habitat/task/actions@habitat.task.actions.agent_5_oracle_nav_randcoord_action_obstacle: oracle_nav_action
+  - /habitat/task/actions@habitat.task.actions.agent_6_oracle_nav_randcoord_action_obstacle: oracle_nav_action
+  - /habitat/task/actions@habitat.task.actions.agent_7_oracle_nav_randcoord_action_obstacle: oracle_nav_action
+  - /habitat/task/actions@habitat.task.actions.agent_8_oracle_nav_randcoord_action_obstacle: oracle_nav_action
+
+  - /habitat/task/lab_sensors@habitat.task.lab_sensors.agent_1_main_humanoid_detector_sensor: main_humanoid_detector_sensor
+  - /habitat/task/lab_sensors@habitat.task.lab_sensors.agent_1_other_humanoid_detector_sensor: other_humanoid_detector_sensor
+  - _self_
+
+habitat:
+  environment:
+    max_episode_steps: 300
+  
+  task:
+    lab_sensors:
+      agent_1_main_humanoid_detector_sensor:
+        human_id: 100
+        human_pixel_threshold: 3000
+        return_image: True
+        is_return_image_bbox: True
+
+      agent_1_other_humanoid_detector_sensor:
+        human_id: 100
+        human_pixel_threshold: 10000
+        return_image: False
+        is_return_image_bbox: False
+
+    actions:
+      agent_0_humanoid_navigate_action:
+        type: OracleNavCoordActionObstacleForMainHuman
+        motion_control: human_joints
+        spawn_max_dist_to_obj: -1.0
+        dist_thresh: 0.5
+        lin_speed: 10.0
+        ang_speed: 10.0
+        allow_dyn_slide: True
+
+      agent_1_base_velocity:
+        longitudinal_lin_speed: 15.0
+        lateral_lin_speed: 10.0
+        allow_dyn_slide: True
+        ang_speed: 6.28
+        allow_back: True
+        collision_threshold: 1e-5
+        # If we allow the robot to move laterally
+        enable_lateral_move: True
+        enable_rotation_check_for_dyn_slide: False
+        navmesh_offset: [[0.0, 0.0], [0.25, 0.0], [-0.25, 0.0]]
+
+      agent_2_oracle_nav_randcoord_action_obstacle:
+        type: OracleNavRandCoordActionForOtherHuman 
+        motion_control: human_joints
+        human_stop_and_walk_to_robot_distance_threshold: 2
+        lin_speed: 10.0
+        ang_speed: 10.0
+        allow_dyn_slide: True
+
+      agent_3_oracle_nav_randcoord_action_obstacle:
+        type: OracleNavRandCoordActionForOtherHuman 
+        motion_control: human_joints
+        human_stop_and_walk_to_robot_distance_threshold: 2
+        lin_speed: 10.0
+        ang_speed: 10.0
+        allow_dyn_slide: True
+
+      agent_4_oracle_nav_randcoord_action_obstacle:
+        type: OracleNavRandCoordActionForOtherHuman 
+        motion_control: human_joints
+        human_stop_and_walk_to_robot_distance_threshold: 2
+        lin_speed: 10.0
+        ang_speed: 10.0
+        allow_dyn_slide: True
+      
+      agent_5_oracle_nav_randcoord_action_obstacle:
+        type: OracleNavRandCoordActionForOtherHuman 
+        motion_control: human_joints
+        human_stop_and_walk_to_robot_distance_threshold: 2
+        lin_speed: 10.0
+        ang_speed: 10.0
+        allow_dyn_slide: True
+
+      agent_6_oracle_nav_randcoord_action_obstacle:
+        type: OracleNavRandCoordActionForOtherHuman 
+        motion_control: human_joints
+        human_stop_and_walk_to_robot_distance_threshold: 2
+        lin_speed: 10.0
+        ang_speed: 10.0
+        allow_dyn_slide: True
+      
+      agent_7_oracle_nav_randcoord_action_obstacle:
+        type: OracleNavRandCoordActionForOtherHuman 
+        motion_control: human_joints
+        human_stop_and_walk_to_robot_distance_threshold: 2
+        lin_speed: 10.0
+        ang_speed: 10.0
+        allow_dyn_slide: True
+
+      agent_8_oracle_nav_randcoord_action_obstacle:
+        type: OracleNavRandCoordActionForOtherHuman 
+        motion_control: human_joints
+        human_stop_and_walk_to_robot_distance_threshold: 2
+        lin_speed: 10.0
+        ang_speed: 10.0
+        allow_dyn_slide: True
+
+  gym:
+    obs_keys:
+      - agent_0_third_rgb
+      - agent_1_main_humanoid_detector_sensor
+      - agent_1_other_humanoid_detector_sensor
+      - agent_1_articulated_agent_jaw_rgb
+      - agent_1_articulated_agent_jaw_panoptic
+      - agent_1_third_rgb
+      - agent_1_localization_sensor
+
+  simulator:
+    type: RearrangeSim-v2
+    scene_dataset: "data/scene_datasets/hssd-hab/hssd-hab.scene_dataset_config.json"
+    navmesh_include_static_objects: True
+    seed: 100
+    ctrl_freq: 40
+    auto_sleep: True
+    agents_order:
+      - agent_0
+      - agent_1
+      - agent_2
+      - agent_3
+      - agent_4
+      - agent_5
+      - agent_6
+      - agent_7
+      - agent_8
+
+    habitat_sim_v0:
+      allow_sliding: True
+      enable_physics: True

@@ -1,0 +1,9 @@
+# @package habitat.simulator.agents.spot
+defaults:
+  - agent_base
+  - _self_
+
+radius: 0.5
+height: 0.5
+articulated_agent_type: "SpotRobot"
+articulated_agent_urdf: data/robots/hab_spot_arm/urdf/hab_spot_arm.urdf

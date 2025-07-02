@@ -1,0 +1,15 @@
+gym<0.23.1,>=0.22.0
+numpy>=1.20.0
+numpy-quaternion>=2019.3.18.14.33.20
+attrs>=19.1.0
+opencv-python>=3.3.0
+hydra-core>=1.2.0
+omegaconf>=2.2.3
+numba>=0.44.0
+imageio>=2.2.0
+imageio-ffmpeg>=0.2.0
+scipy>=1.10.1
+tqdm>=4.0.0
+
+[:python_version < "3.8"]
+pickle5
