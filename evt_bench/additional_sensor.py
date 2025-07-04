@@ -61,6 +61,7 @@ class MainHumanoidDetectorSensor(UsesArticulatedAgentInterface, Sensor):
         self._human_pixel_threshold = config.human_pixel_threshold
         self._return_image = config.return_image
         self._is_return_image_bbox = config.is_return_image_bbox
+        self._first_init = True
 
         # Check the observation size
         jaw_panoptic_shape = None
@@ -107,7 +108,9 @@ class MainHumanoidDetectorSensor(UsesArticulatedAgentInterface, Sensor):
         return rmin, rmax, cmin, cmax
 
     def get_observation(self, observations, episode, *args, **kwargs):
-        self._human_id = episode.info["main_human_semantic_id"]
+        if self._first_init:
+            self._human_id = episode.info["main_human_semantic_id"]
+            self._first_init = False
         use_k = f"agent_{self.agent_id}_articulated_agent_jaw_panoptic"
         if use_k in observations:
             panoptic = observations[use_k]

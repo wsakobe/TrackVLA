@@ -18,6 +18,7 @@ def evaluate_agent(config, dataset_split, save_path) -> None:
     # robot definition
     robot_config = GTBBoxAgent(save_path)
     
+    first_init = True
     with habitat.TrackEnv(
         config=config,
         dataset=dataset_split
@@ -28,7 +29,6 @@ def evaluate_agent(config, dataset_split, save_path) -> None:
         num_episodes = len(env.episodes)
         for _ in trange(num_episodes):
             obs = env.reset()
-
             light_setup = [
                 LightInfo(
                     vector=[10.0, -2.0, 0.0, 0.0],
@@ -56,7 +56,9 @@ def evaluate_agent(config, dataset_split, save_path) -> None:
             result = {}
             record_infos = []
 
-            instruction = env.current_episode.info['instruction']
+            if first_init:
+                instruction = env.current_episode.info['instruction']
+                first_init = False
 
             action_dict = dict()
             finished = False

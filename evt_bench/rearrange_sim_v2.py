@@ -377,10 +377,9 @@ class RearrangeSim_v2(HabitatSim):
             if self._should_setup_semantic_ids:
                 self._setup_semantic_ids()
         else:
-            # self._handle_to_goal_name = ep_info.info["object_labels"]
-        
             self.ep_info = ep_info
             new_scene = self.prev_scene_id != ep_info.scene_id
+            
             # if new_scene:
             #     self._prev_obj_names = None
 
@@ -395,7 +394,7 @@ class RearrangeSim_v2(HabitatSim):
             # self._clear_objects(should_add_objects, new_scene)
 
             is_hard_reset = new_scene # or should_add_objects
-
+            
             if is_hard_reset:
                 with read_write(config):
                     config["scene"] = ep_info.scene_id
@@ -404,7 +403,7 @@ class RearrangeSim_v2(HabitatSim):
                 self.add_perf_timing("super_reconfigure", t_start)
                 # The articulated object handles have changed.
                 self._start_art_states = {}
-
+                
             if new_scene:
                 self.agents_mgr.on_new_scene()
                 

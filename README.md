@@ -67,19 +67,23 @@
 
 4. **Prepare datasets**
 
-    Download Habitat Matterport 3D (HM3D) dataset from [here](https://github.com/facebookresearch/habitat-sim/blob/main/DATASETS.md#habitat-matterport-3d-research-dataset-hm3d).
+    Download Habitat Matterport 3D (HM3D) dataset from [here](https://github.com/facebookresearch/habitat-sim/blob/main/DATASETS.md#habitat-matterport-3d-research-dataset-hm3d) and Matterport3D (MP3D) from [here](https://github.com/facebookresearch/habitat-sim/blob/main/DATASETS.md#matterport3d-mp3d-dataset).
 
     Then move the dataset to `data/scene_datasets`. The structure of the dataset is outlined as follows:
     ```
     data/
      └── scene_datasets/
-        └── hm3d/
-          ├── train/
+        ├── hm3d/
+        │ ├── train/
+        │ │   └── ...
+        │ ├── val/
+        │ │   └── ...
+        │ └── minival
+        │     └── ...
+        └── mp3d/
+          ├── 1LXtFkjw3qL
           │   └── ...
-          ├── val/
-          │   └── ...
-          └── minival
-              └── ...
+          └── ...
     ```
 
     Next, run the following code to obtain data for the humanoid avatars:

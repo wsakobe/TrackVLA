@@ -81,7 +81,7 @@ def calculate_averages(folder_path):
 
     total_steps = sum(following_step_revise_list)
     total_following_steps = sum(following_step_list)
-    return  {"success rate": succ_count / count, "following rate:": total_following_steps / total_steps, "collision rate:": sum(collision_list) / count}
+    return  {"episode count:": len(file_paths), "success rate": succ_count / count, "following rate:": total_following_steps / total_steps, "collision rate:": sum(collision_list) / count}
 
 def main():
     parser = argparse.ArgumentParser()

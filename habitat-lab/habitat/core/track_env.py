@@ -298,7 +298,6 @@ class TrackEnv:
 
         assert self._current_episode is not None, "Reset requires an episode"
         # self._config.simulator.scene = self._current_episode.scene_id
-        print(self._config.simulator.scene, self._current_episode.scene_id)
         self.reconfigure(self._config)
 
         observations = self.task.reset(episode=self.current_episode)

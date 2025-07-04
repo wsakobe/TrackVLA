@@ -121,6 +121,8 @@ class MultiHumanTrackingTask(NavigationTask):
 
         with open("humanoid_infos.json", "r") as f:
             self.semantic_file = json.load(f)
+
+        self._first_init = True
         
         # Get config options
         self._force_regenerate = self._config.force_regenerate
@@ -309,18 +311,17 @@ class MultiHumanTrackingTask(NavigationTask):
         main_humanoid_name = episode.info[main_name_attr]
         extra_name_attr = "extra_humanoid_names"
         extra_humanoid_names = episode.info[extra_name_attr]
-
         humanoid_agent_data: ArticulatedAgentData = sim.agents_mgr[0]
-        humanoid = humanoid_agent_data.articulated_agent
+        old_humanoid = humanoid_agent_data.articulated_agent
         sim.get_articulated_object_manager().remove_object_by_handle(
-            humanoid.sim_obj.handle
+            old_humanoid.sim_obj.handle
         )
         
         for i in range(len(extra_humanoid_names)):
             humanoid_agent_data: ArticulatedAgentData = sim.agents_mgr[i+2]
-            humanoid = humanoid_agent_data.articulated_agent
+            old_humanoid = humanoid_agent_data.articulated_agent
             sim.get_articulated_object_manager().remove_object_by_handle(
-                humanoid.sim_obj.handle
+                old_humanoid.sim_obj.handle
             )
 
         # Main human avatar switch
@@ -355,7 +356,6 @@ class MultiHumanTrackingTask(NavigationTask):
             humanoid = KinematicHumanoid(agent_config, sim=sim)
             humanoid.reconfigure()
             humanoid_agent_data.articulated_agent = humanoid
-
 
     def _generate_pointnav_goal(self,n=1):
         if self._use_episode_start_goal: ## remain to improve
@@ -425,7 +425,9 @@ class MultiHumanTrackingTask(NavigationTask):
         self._ignore_collisions = []
 
         if self._sim_reset:
-            self._switch_avatar(self._sim, episode)
+            if self._first_init:
+                self._switch_avatar(self._sim, episode)
+                self._first_init = False
             self._sim.reset()
 
             for action_instance in self.actions.values():
