@@ -59,13 +59,21 @@
       conda install habitat-sim==0.3.1 withbullet -c conda-forge -c aihabitat
       ```
 
-3. **Install habitat-lab from source**
+3. **Install habitat-lab v0.3.1 from source**
       ```
+      git clone https://github.com/facebookresearch/habitat-lab.git --branch v0.3.1
       cd habitat-lab
       pip install -e habitat-lab
+      cd ..
       ```
 
-4. **Prepare datasets**
+4. **Clone the repo**
+      ```
+      git clone https://github.com/wsakobe/TrackVLA.git
+      cd TrackVLA
+      ```
+
+5. **Prepare datasets**
 
     Download Habitat Matterport 3D (HM3D) dataset from [here](https://github.com/facebookresearch/habitat-sim/blob/main/DATASETS.md#habitat-matterport-3d-research-dataset-hm3d) and Matterport3D (MP3D) from [here](https://github.com/facebookresearch/habitat-sim/blob/main/DATASETS.md#matterport3d-mp3d-dataset).
 
