@@ -117,7 +117,6 @@
 ## 📝 TODO List
 - [x] Release the arXiv paper in May, 2025.
 - [x] Release the EVT-Bench (Embodied Visual Tracking Benchmark).
-- [ ] Release the large-scale embodied visual tracking dataset.
 - [ ] Release the checkpoint and code of TrackVLA.
 
 ## ✉️ Contact
