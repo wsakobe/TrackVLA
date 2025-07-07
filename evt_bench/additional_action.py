@@ -2,7 +2,6 @@ from gym import spaces
 from dataclasses import dataclass
 import numpy as np
 from habitat.core.logging import logger
-from habitat_baselines.common.baseline_registry import baseline_registry
 from habitat.config.default_structured_configs import (
     ActionConfig,
 )
