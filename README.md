@@ -95,6 +95,7 @@
       ```
       python download_humanoid_data.py
       ```
+   If the above download file fails to download, please download the humanoids.zip from this [link](https://drive.google.com/file/d/1aE_wyvPqvOuVmF8px2vTO3trr70DKf1l/view) and then manually unzip it to the data/ directory.
 
 
 ## 🧪 Evaluation
