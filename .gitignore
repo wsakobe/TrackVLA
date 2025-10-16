@@ -85,6 +85,9 @@ modify_dataset.py
 data/scene_datasets/
 data/versioned_data/
 data/humanoids/
+exp_results/
+uninavid/
 following_info.json
 human_description_reid.json
 human_description.json
+model_zoo

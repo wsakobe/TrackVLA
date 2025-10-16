@@ -41,6 +41,7 @@
 
 ## 📢 News
 
+* [25/10/16]: We are thrilled to announce that Uni-NaVid (a VLA model with discrete actions) has been officially open-sourced and now fully supports testing on the EVT-Bench!
 * [25/07/02]: The EVT-Bench is now available.
 
 ## 💡 Installation
@@ -98,9 +99,31 @@
 
 
 ## 🧪 Evaluation
+  ### Baseline model
   Run the script with:
 
-    bash eval.sh
+    bash eval_baseline.sh
+
+  Results will be saved in the specified SAVE_PATH, which will include a log directory and a video directory. To monitor the results during the evaluation process, run:
+
+    watch -n 1 python analyze_results.py --path YOUR_RESULTS_PATH
+
+  To stop the evaluation, use:
+
+    bash kill_eval.sh
+
+  ### Uni-NaVid
+  First, you need to clone the origin repo of Uni-NaVid:
+
+    git clone https://github.com/jzhzhang/Uni-NaVid
+   
+  Then, you need to link the main code folder of Uni-NaVid to EVT-Bench:
+
+    ln -s /path/to/Uni-NaVid/uninavid /path/to/TrackVLA/uninavid
+
+  Modify eval_uninavid.sh to set the weight path of Uni-NaVid, and run the script with:
+
+    bash eval_uninavid.sh
 
   Results will be saved in the specified SAVE_PATH, which will include a log directory and a video directory. To monitor the results during the evaluation process, run:
 
@@ -114,7 +137,7 @@
 ## 📝 TODO List
 - [x] Release the arXiv paper in May, 2025.
 - [x] Release the EVT-Bench (Embodied Visual Tracking Benchmark).
-- [ ] Release the checkpoint and code of TrackVLA.
+- [x] Release the checkpoint and inference code of Uni-NaVid.
 
 ## ✉️ Contact
 For any questions, please feel free to email wangshaoan@stu.pku.edu.cn. We will respond to it as soon as possible.
